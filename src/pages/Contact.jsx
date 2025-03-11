@@ -1,9 +1,11 @@
-import React, { Suspense, useRef, useState } from 'react'
+import React, { Suspense, useEffect, useRef, useState } from 'react'
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { Canvas } from '@react-three/fiber';
 import Loader from '../Components/Loader/Loader';
 import Fox from '../models/Fox';
+import useAlert from '../hooks/useAlert';
+import Alert from '../Components/Alert/Alert';
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -16,6 +18,7 @@ const Contact = () => {
     }
   );
   const [currentAnimation, setCurrentAnimation] = useState('idle');
+  const { alert, showAlert, hideAlert } = useAlert();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -38,7 +41,7 @@ const Contact = () => {
       const templateParams = {
         from_name: form.name,
         message: form.message,
-        to_email: "devbyaheli@gmail.com",
+        to_email: import.meta.env.VITE_APP_EMAILJS_TO_EMAIL,
       };
 
       // Email parameters for user confirmation
@@ -47,7 +50,6 @@ const Contact = () => {
         user_email: form.email,
       };
 
-      // Sending email to recipients (Raja & Vignesh)
       await toast.promise(
         emailjs.send(serviceID, recipientTemplateID, templateParams, publicKey),
         {
@@ -67,7 +69,32 @@ const Contact = () => {
         }
       );
 
-      // Clear the form after successful submission
+      showAlert({
+        show: 'true',
+        text: "Hooray! Your message just landed in my inbox.",
+        type: "success",
+      })
+
+      setTimeout(() => {
+        hideAlert();
+      }, 5000);
+
+    } catch (error) {
+      console.error("Email sending error:", error);
+      setCurrentAnimation('idle');
+      showAlert({
+        show: 'true',
+        text: "Something's off! Can you make sure everything is filled in correctly?",
+        type: "danger",
+      });
+
+      setTimeout(() => {
+        hideAlert();
+      }, 5000);
+
+    } finally {
+      setIsLoading(false);
+      setCurrentAnimation('idle');
       if (form.current) {
         form.current.reset();
       }
@@ -76,22 +103,30 @@ const Contact = () => {
         email: '',
         message: '',
       })
-    } catch (error) {
-      console.error("Email sending error:", error);
-      setCurrentAnimation('idle');
-    } finally {
-      setIsLoading(false);
-      setCurrentAnimation('idle');
     }
   }
 
-  const handleFocus = () => setCurrentAnimation('walk');
+  useEffect(() => {
+    setCurrentAnimation('hit');
+
+    const timer = setTimeout(() => {
+      setCurrentAnimation('idle');
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
 
   const handleBlur = () => setCurrentAnimation('idle');
 
 
   return (
     <section className='relative flex lg:flex-row flex-col max-container'>
+
+      {alert.show && (
+        <Alert {...alert} />
+      )}
+      
       <div className='flex-1 min-w-[50%] flex flex-col'>
         <h1 className='head-text blue-gradient_text'>Get in Touch</h1>
 
