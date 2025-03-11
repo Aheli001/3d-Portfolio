@@ -1,15 +1,15 @@
 import hero from './hero.jpg'
-import meta from './meta.png'
-import shopify from './shopify.png'
-import starbucks from './starbucks.png'
-import tesla from './tesla.png'
+import pamprazzi from './pamprazzi_logo.png'
+import cognizant from './Cognizant.png'
+import iema from './iema.png'
 import logo from './logo.svg'
+
 
 export {
     hero,
-    meta,
-    shopify,
-    starbucks,
-    tesla,
-    logo
+    pamprazzi,
+    cognizant,
+    iema,
+    logo,
+    
 }

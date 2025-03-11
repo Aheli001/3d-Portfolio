@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef, useState } from 'react'
+import React, { Suspense, useRef, useState } from 'react'
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { Canvas } from '@react-three/fiber';
@@ -105,16 +105,6 @@ const Contact = () => {
       })
     }
   }
-
-  useEffect(() => {
-    setCurrentAnimation('hit');
-
-    const timer = setTimeout(() => {
-      setCurrentAnimation('idle');
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
 
   const handleBlur = () => setCurrentAnimation('idle');
