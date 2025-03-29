@@ -18,10 +18,10 @@ import {
     pricewise,
     react,
     redux,
-    snapgram,
+    baby,
     summiz,
     tailwindcss,
-    threads,
+    sort,
     typescript
 } from "../assets/icons";
 
@@ -111,10 +111,10 @@ export const experiences = [
         iconBg: "#c6e8ef",
         date: "Oct 2024 - Present",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Contributing to the development of internal tools and libraries to improve developer productivity.",
+            "Troubleshooting and debugging issues in production applications.",
+            "Participating in team meetings and contributing to the overall success of the team.",
+            "Mentoring junior developers and providing guidance on best practices.",
         ],
     },
     {
@@ -125,7 +125,7 @@ export const experiences = [
         date: "May 2024 - Sept 2024",
         points: [
             "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality product.",
             "Implementing responsive design and ensuring cross-browser compatibility.",
             "Participating in code reviews and providing constructive feedback to other developers.",
         ],
@@ -137,10 +137,10 @@ export const experiences = [
         iconBg: "#bbcced",
         date: "Sept 2022 - Oct 2023",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Reduced load times by 40% through application performance monitoring and optimization strategies.",
+            "Improved workflow automation with tailored SAP ABAP modules, raising user satisfaction scores by 25% within six months.",
+            "Streamlined data migration processes, achieving a 30% reduction in project timelines.",
+            "Collaborated with cross-functional teams to define project requirements and deliver innovative solutions.",
         ],
     },
 ];
@@ -165,45 +165,24 @@ export const socialLinks = [
 
 export const projects = [
     {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
-    },
-    {
-        iconUrl: threads,
-        theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
-    },
-    {
-        iconUrl: car,
-        theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
-    },
-    {
-        iconUrl: snapgram,
+        iconUrl: baby,
         theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
-    },
-    {
-        iconUrl: estate,
-        theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
+        name: 'EmoBaby: AI-Powered Baby Emotion Detection',
+        description: 'An interactive and user-friendly frontend for the Baby Emotion Model, designed to analyze and visualize newborn emotions in real time.',
+        link: 'https://github.com/Aheli001/Babyemo',
     },
     {
         iconUrl: summiz,
-        theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
-    }
+        theme: 'btn-back-green',
+        name: 'NeoEmote: Smart Emotion Recognition for Infants',
+        description: 'Model capable of detecting and classifying newborn baby emotions',
+        link: 'https://github.com/Aheli001/baby-emotion-recognition',
+    },
+    {
+        iconUrl: sort,
+        theme: 'btn-back-blue',
+        name: 'SortEase: Interactive Sorting Algorithm Visualizer',
+        description: 'This will help to understand by visualizing various sorting techniques through real-time animations.',
+        link: 'https://github.com/Aheli001/sorting_visualizer',
+    },
 ];
